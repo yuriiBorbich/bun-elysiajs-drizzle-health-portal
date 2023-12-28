@@ -4,7 +4,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts",
-    "build": "bun run build.ts",
+    "build": "bun build src/index.ts",
+    "start": "NODE_ENV=production bun src/index.ts",
     "migrate": "drizzle-kit push:pg --config ./src/config/drizzle.config.ts",
     "generate:migrate": "drizzle-kit generate:pg --config ./src/config/drizzle.config.ts"
   },
