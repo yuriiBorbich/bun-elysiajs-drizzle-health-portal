@@ -3,13 +3,28 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun run build.ts",
+    "migrate": "drizzle-kit push:pg --config ./src/config/drizzle.config.ts",
+    "generate:migrate": "drizzle-kit generate:pg --config ./src/config/drizzle.config.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cookie": "^0.7.0",
+    "@elysiajs/cors": "^0.7.2",
+    "@elysiajs/jwt": "^0.7.1",
+    "@elysiajs/swagger": "^0.7.4",
+    "@neondatabase/serverless": "^0.6.1",
+    "drizzle-orm": "^0.29.2",
+    "elysia": "latest",
+    "pg": "^8.11.3",
+    "pino": "^8.17.1",
+    "pino-pretty": "^10.3.0",
+    "postgres": "^3.4.3"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/pg": "^8.10.9",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.9"
   },
   "module": "src/index.js"
 }
